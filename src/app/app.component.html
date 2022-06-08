@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div class="display">
+        <app-youtube-player [timeStamp]="timeStamp" [videoId]="videoId" ></app-youtube-player>
+        <app-vocabularies-list [dataSource]="tbData"></app-vocabularies-list>
+    </div>
+    <br />
+    <div class="control">
+        <input type="text" placeholder="Youtube Video Id" [(ngModel)]="videoId"/>
+      <button type="submit" (click)="onSubmit()">Submit</button>
+    </div>
+  </body>
+</html>
