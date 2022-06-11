@@ -68,7 +68,7 @@ export class VocabulariesListComponent implements OnInit {
     this.dataSource = temp;
   }
 
-  public selectTimeStamp(timeStamp: any): void {
+  public selectTimeStamp(timeStamp: number): void {
     console.log('user select', timeStamp);
     this.notifyChoosedTimeStamp.emit(timeStamp);
   }

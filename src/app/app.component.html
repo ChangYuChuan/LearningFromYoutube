@@ -9,7 +9,7 @@
   <body>
     <div class="display">
         <app-youtube-player [timeStamp]="timeStamp" [videoId]="videoId" ></app-youtube-player>
-        <app-vocabularies-list [dataSource]="tbData"></app-vocabularies-list>
+        <app-vocabularies-list (notifyChoosedTimeStamp)="setTimeStamp($event)" [dataSource]="tbData"></app-vocabularies-list>
     </div>
     <br />
     <div class="control">

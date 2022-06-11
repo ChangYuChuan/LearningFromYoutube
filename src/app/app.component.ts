@@ -6,20 +6,21 @@ import { ExtractVocabulariesService } from './service/extract-vocabularies.servi
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  @Input() videoId:any = '';
-  timeStamp:number =0;
-  
-  tbData:ITabularVocabularyInfo[] = [];
-  constructor(private vocSrv:ExtractVocabulariesService ){}
+  @Input() videoId: any = '';
+  timeStamp: number = 0;
+
+  tbData: ITabularVocabularyInfo[] = [];
+  constructor(private vocSrv: ExtractVocabulariesService) {}
 
   async onSubmit(): Promise<void> {
-    if(this.videoId == '')
-      return;
+    if (this.videoId == '') return;
     this.tbData = await this.vocSrv.getVocabularies(this.videoId);
-    
-
+  }
+  setTimeStamp(timeStamp: number): void {
+    if (timeStamp == undefined) return;
+    this.timeStamp = timeStamp;
   }
 }
