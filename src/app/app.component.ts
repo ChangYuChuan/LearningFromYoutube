@@ -21,6 +21,7 @@ export class AppComponent {
   }
   setTimeStamp(timeStamp: number): void {
     if (timeStamp == undefined) return;
+    console.log('AppComponent',`set timestap ${timeStamp}`);
     this.timeStamp = timeStamp;
   }
 }

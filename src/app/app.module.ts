@@ -12,6 +12,7 @@ import { CellRenderForSentencesComponent } from './cell-render-for-sentences/cel
 import { CellRenderForDictionaryComponent } from './cell-render-for-dictionary/cell-render-for-dictionary.component';
 import { YoutubePlayerComponent } from './youtube-player/youtube-player.component';
 import { YouTubePlayerModule } from "@angular/youtube-player";
+import { CellRenderForTimeStampComponent } from './cell-render-for-time-stamp/cell-render-for-time-stamp.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { YouTubePlayerModule } from "@angular/youtube-player";
     BtnCellRenderForStopwordComponent,
     CellRenderForSentencesComponent,
     CellRenderForDictionaryComponent,
+    CellRenderForTimeStampComponent,
     YoutubePlayerComponent
   ],
   imports: [

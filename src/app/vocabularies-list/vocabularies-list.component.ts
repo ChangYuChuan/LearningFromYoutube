@@ -3,6 +3,7 @@ import { GridOptions } from 'ag-grid-community';
 import { BtnCellRenderForStopwordComponent } from '../btn-cell-render-for-stopword/btn-cell-render-for-stopword.component';
 import { CellRenderForDictionaryComponent } from '../cell-render-for-dictionary/cell-render-for-dictionary.component';
 import { CellRenderForSentencesComponent } from '../cell-render-for-sentences/cell-render-for-sentences.component';
+import { CellRenderForTimeStampComponent } from '../cell-render-for-time-stamp/cell-render-for-time-stamp.component';
 import { ITabularVocabularyInfo } from '../models/itabular-vocabulary-info';
 import { ExtractVocabulariesService } from '../service/extract-vocabularies.service';
 
@@ -15,7 +16,11 @@ export class VocabulariesListComponent implements OnInit {
   public gridOptions: GridOptions;
   readonly columnDefs: any[] = [
     { field: 'Vocabulary', sortable: true },
-    { field: 'TimeStamp' },
+    { field: 'TimeStamp', 
+      cellRenderer: CellRenderForTimeStampComponent,
+      minWidth: 100,
+      autoHeight: true,
+    },
     {
       field: 'DictionaryUrl',
       cellRenderer: CellRenderForDictionaryComponent,
@@ -26,7 +31,6 @@ export class VocabulariesListComponent implements OnInit {
       cellRenderer: CellRenderForSentencesComponent,
       minWidth: 150,
       autoHeight: true,
-      autoWeight: true,
     },
     {
       headerName: 'Remove',
